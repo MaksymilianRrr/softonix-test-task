@@ -1,8 +1,7 @@
 {
-    "validCustomer": {
-      "firstName": "John",
-      "lastName": "Daniels",
-      "postalCode": "12345"
-    }
+  "validCustomer": {
+    "firstName": "John",
+    "lastName": "Daniels",
+    "postalCode": "12345"
   }
-  
+}

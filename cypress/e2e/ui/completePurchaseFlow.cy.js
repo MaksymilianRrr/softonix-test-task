@@ -31,15 +31,15 @@ describe('Complete Purchase Flow', () => {
 
     // Step 2: Verify inventory page
     inventoryPage
-      .verifyOnInventoryPage()
+      .verifyInventoryPageIsVisible()
       .addFirstItemToCart();
 
     // Step 3: Go to cart
-    inventoryPage.goToCart();
+    inventoryPage.openCart();
 
     // Step 4: Verify cart page and proceed to checkout
     cartPage
-      .verifyCartHasItems()
+      .verifyCartHasItems(1)
       .proceedToCheckout();
 
     // Step 5: Fill checkout info
@@ -55,6 +55,8 @@ describe('Complete Purchase Flow', () => {
     checkoutPage.finishPurchase();
 
     // Step 7: Verify order confirmation
-    checkoutCompletePage.verifyOrderSuccess();
+    checkoutCompletePage
+      .verifyCompletePageIsVisible()
+      .verifyOrderSuccess();
   });
 });
