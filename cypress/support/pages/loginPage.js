@@ -31,6 +31,13 @@ export class LoginPage {
       cy.get(this.locators.buttons.login).click();
       return this;
     }
+
+    login(username, password) {
+      this.enterUsername(username);
+      this.enterPassword(password);
+      this.submit();
+      return this;
+    }
   
     getErrorMessage() {
       return cy.get(this.locators.messages.error);
